@@ -57,4 +57,9 @@ static int gettok() {
 		if(LastChar != EOF)
 			return gettok();
 	}
+
+	//check for end of file
+	if (LastChar == EOF)
+		return tok_eof;
+
 }
