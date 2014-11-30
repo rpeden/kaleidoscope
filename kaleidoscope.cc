@@ -14,3 +14,6 @@ enum Token {
 	tok_identifier = -4,
 	tok_def = -5,
 };
+
+static std::string IdentifierStr;  //Filled in if tok_identifier
+static double NumVal;			   //Filled in if tok_number
