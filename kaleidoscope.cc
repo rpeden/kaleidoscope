@@ -113,4 +113,15 @@ class CallExprAST : public ExprAST {
 public: 
 	CallExprAST(const std::string &callee, std::vector<ExprAST*> &args)
 		: Callee(callee), Args(args)  {}
+};
+
+///  ProtytypeAST - Represents the prototypr for a function,
+///  which captures its name, argument names, and number of args
+///  the function takes
+class PrototypeAST {
+	std::string Name;
+	std::vector<std::string> Args;
+public:
+	PrototypeAST(const std::string &name, const std::vector<std::string> &args)
+		: Name(name), Args(args)
 }
