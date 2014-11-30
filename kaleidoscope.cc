@@ -48,4 +48,13 @@ static int gettok() {
 		NumVal = strtod(NumStr.c_str(), 0);
 		return tok_number;
 	}
+
+	if(LastChar == "#") {
+		//comment until end of line
+		do LastChar = getchar();
+		while (LastChar != EOF && LastChar != '\n' && LastChar != '\r');
+
+		if(LastChar != EOF)
+			return gettok();
+	}
 }
