@@ -81,4 +81,11 @@ Abstract Syntax Tree
 class ExprAST {
 public:
 	virtual ~ExprAST() {}
-}
+};
+
+// NumberExprAST - Expression class for numeric literals
+class NumberExprAST : public ExprAST {
+  double val;
+public:
+	NumberExprAST(double val) : Val(val) {}
+};
