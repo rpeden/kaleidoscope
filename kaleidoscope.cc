@@ -62,4 +62,8 @@ static int gettok() {
 	if (LastChar == EOF)
 		return tok_eof;
 
+	//otherwise just return the character as its ascii value
+	int ThisChar = LastChar;
+	LastChar = getchar();
+	return ThisChar;
 }
