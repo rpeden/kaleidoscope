@@ -83,9 +83,16 @@ public:
 	virtual ~ExprAST() {}
 };
 
-// NumberExprAST - Expression class for numeric literals
+/// NumberExprAST - Expression class for numeric literals
 class NumberExprAST : public ExprAST {
   double val;
 public:
 	NumberExprAST(double val) : Val(val) {}
+};
+
+/// VariableExprAST - Expression class for referencing a variable
+class VariableExprAST : public ExprAST {
+	std::string Name;
+public:
+	VariableExprAST(const std::string &name) : Name(name) {}
 };
