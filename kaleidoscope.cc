@@ -1,3 +1,9 @@
+#include <cctype>
+#include <cstdio>
+#include <cstdlib>
+#include <map>
+#include <string>
+#include <vector>
 
 /****
 Lexer
@@ -66,4 +72,13 @@ static int gettok() {
 	int ThisChar = LastChar;
 	LastChar = getchar();
 	return ThisChar;
+}
+
+/**********
+Abstract Syntax Tree
+***********/
+/// ExprAst - Base class for all expression nodes
+class ExprAST {
+public:
+	virtual ~ExprAST() {}
 }
