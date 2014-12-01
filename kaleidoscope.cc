@@ -170,6 +170,6 @@ static ExprAST *ParseNumberExpr() {
 }
 
 /// parenexpr ::= '(' expression ')'
-static ExprAST *V = ParseExpression() {
-	
+static ExprAST *V = ParseParenExpr() {
+
 }
