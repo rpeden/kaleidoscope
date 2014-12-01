@@ -148,7 +148,7 @@ static int getNextToken() {
 
 /// helper functions for error handling
 ExprAST *Error(const char *Str) { 
-	fprintf(stderr, "Error: %s\n", Str;);
+	fprintf(stderr, "Error: %s\n", Str);
 	return 0;
 }
 
