@@ -161,3 +161,10 @@ FunctionAST *ErrorF(const char *Str) {
 	Error(Str);
 	return 0;
 }
+
+/// numberexpr ::= number
+static ExprAST *ParseNumberExpr() {
+	ExprAST *Result = new NumberExprAST(NumVal);
+	getNextToken(); //consume the number
+	return Result;
+}
