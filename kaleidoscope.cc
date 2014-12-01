@@ -186,5 +186,11 @@ static ExprAST *ParseParenExpr() {
 ///   ::= identifier
 ///   ::= identifier '(' expression* ')'
 static ExprAST *ParseIdentifierExpr() {
+	std::string IdName = IdentifierStr;
 
+	getNextToken(); //eat identifier
+	if(CurTok != '(') {
+		//simple variable ref
+		return new VariableExprAST(IdName);
+	}
 }
