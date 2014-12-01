@@ -55,7 +55,7 @@ static int gettok() {
 		return tok_number;
 	}
 
-	if(LastChar == "#") {
+	if(LastChar == '#') {
 		//comment until end of line
 		do LastChar = getchar();
 		while (LastChar != EOF && LastChar != '\n' && LastChar != '\r');
