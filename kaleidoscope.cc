@@ -124,4 +124,4 @@ class PrototypeAST {
 public:
 	PrototypeAST(const std::string &name, const std::vector<std::string> &args)
 		: Name(name), Args(args)
-}
+};
