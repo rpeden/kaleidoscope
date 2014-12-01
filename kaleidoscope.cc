@@ -85,7 +85,7 @@ public:
 
 /// NumberExprAST - Expression class for numeric literals
 class NumberExprAST : public ExprAST {
-  double val;
+  double Val;
 public:
 	NumberExprAST(double val) : Val(val) {}
 };
