@@ -133,3 +133,15 @@ public:
 	FunctionAST(PrototypeAST *proto, ExprAST *body)
 		: Proto(proto), Body(body) {}
 };
+
+/*****************
+Parser
+*****************/
+
+/// CurTok/getNextToken - provide a simple token buffer. CurTok is the current
+/// token the parser is looking at. getNextToken reads another token from the 
+/// lexer and updates CurTok with its results.
+static int CurTok;
+static int getNextToken() {
+	return CurTok = gettok();
+}
