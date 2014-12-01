@@ -170,7 +170,7 @@ static ExprAST *ParseNumberExpr() {
 }
 
 /// parenexpr ::= '(' expression ')'
-static ExprAST *V = ParseParenExpr() {
+static ExprAST *ParseParenExpr() {
 	getNextToken(); //eat '('
 	ExprAST *V = ParseExpression();
 	if (!V) return 0;
