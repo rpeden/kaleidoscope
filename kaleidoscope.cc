@@ -156,3 +156,8 @@ PrototypeAST *ErrorP(const char *Str) {
 	Error(Str);
 	return 0;
 }
+
+FunctionAST *ErrorF(const char *Str) {
+	Error(Str);
+	return 0;
+}
