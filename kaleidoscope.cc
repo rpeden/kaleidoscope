@@ -171,5 +171,13 @@ static ExprAST *ParseNumberExpr() {
 
 /// parenexpr ::= '(' expression ')'
 static ExprAST *V = ParseParenExpr() {
+	getNextToken(); //eat '('
+	ExprAST *V = ParseExpression();
+	if (!V) return 0;
 
+	if (CurTok != ')') {
+		return Error("expected ')'");
+	}
+	getNextToken();  //eat ')'
+	return V;
 }
