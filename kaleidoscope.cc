@@ -125,3 +125,11 @@ public:
 	PrototypeAST(const std::string &name, const std::vector<std::string> &args)
 		: Name(name), Args(args) { }
 };
+
+class FunctionAST {
+	PrototypeAST *Proto;
+	ExprAST *Body;
+public:
+	FunctionAST(PrototypeAST *proto, ExprAST *body)
+		: Proto(proto), Body(body) {}
+};
