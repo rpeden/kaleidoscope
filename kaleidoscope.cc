@@ -18,7 +18,7 @@ enum Token {
 	tok_extern = -3,
 	//primary
 	tok_identifier = -4,
-	tok_def = -5,
+	tok_number = -5,
 };
 
 static std::string IdentifierStr;  //Filled in if tok_identifier
