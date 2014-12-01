@@ -186,8 +186,5 @@ static ExprAST *ParseParenExpr() {
 ///   ::= identifier
 ///   ::= identifier '(' expression* ')'
 static ExprAST *ParseIdentifierExpr() {
-	
-}
-static ExprAST *ParseIdentifierExpr() {
 
 }
