@@ -44,7 +44,7 @@ static int gettok() {
 		return tok_identifier;
 	}
 
-	if(isdigit(LastChar) || LastChar = '.') {  //Number: [0-9.]+
+	if(isdigit(LastChar) || LastChar == '.') {  //Number: [0-9.]+
 		std::string NumStr;
 		do {
 			NumStr += LastChar;
