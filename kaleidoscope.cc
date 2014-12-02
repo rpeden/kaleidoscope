@@ -216,3 +216,11 @@ static ExprAST *ParseIdentifierExpr() {
 
 	return new CallExprAST(IdName, Args);
 }
+
+/// primary
+///  ::= identifierexpr
+///  ::= numberexpr
+///  ::= parenexpr
+static ExprAST *ParsePrimary() {
+
+}
