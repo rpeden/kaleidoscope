@@ -233,3 +233,9 @@ static ExprAST *ParsePrimary() {
 /// BinopPrecedence - holds the precedence for each binary operator that
 /// is defined. 
 static std::map<char, int> BinopPrecedence;
+
+/// GetTokPrecedence - This holds the precedence of the pending binary
+/// operator token
+static int GetTokPrecedence() {
+
+}
