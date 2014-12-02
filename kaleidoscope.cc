@@ -237,5 +237,12 @@ static std::map<char, int> BinopPrecedence;
 /// GetTokPrecedence - This holds the precedence of the pending binary
 /// operator token
 static int GetTokPrecedence() {
+	if(!isascii(CurTok)){
+		return -1;
+	}
 
+	//ensure it is a declared binary operator
+	int TokPrec = BinopPrecedence[CurTok];
+	if (TokPrec <= 0) return -1;
+	return TokPrec;
 }
