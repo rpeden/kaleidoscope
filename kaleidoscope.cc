@@ -256,6 +256,12 @@ static ExprAST *ParseExpression() {
  	return ParseBinOpRHS(0, LHS);
 }
 
+/// binoprhs
+/// ::= ('+' primary)
+static ExprAST *ParseBinOpRHS(int ExprPrec, ExprAST *LHS){
+
+}
+
 int main() {
 	//set up standard binary operators
 	//1 is lowest permissted precedence
