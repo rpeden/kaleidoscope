@@ -246,3 +246,12 @@ static int GetTokPrecedence() {
 	if (TokPrec <= 0) return -1;
 	return TokPrec;
 }
+
+int main() {
+	//set up standard binary operators
+	//1 is lowest permissted precedence
+	BinopPrecedence['<'] = 10;
+	BinopPrecedence['+'] = 20; 
+	BinopPrecedence['-'] = 30;
+	BinopPrecedence['*'] = 40;
+}
