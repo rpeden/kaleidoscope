@@ -247,6 +247,12 @@ static int GetTokPrecedence() {
 	return TokPrec;
 }
 
+/// expression
+/// ::= primary binoprhs
+static ExprAST *ParseExpression() {
+
+}
+
 int main() {
 	//set up standard binary operators
 	//1 is lowest permissted precedence
