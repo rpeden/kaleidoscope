@@ -259,7 +259,33 @@ static ExprAST *ParseExpression() {
 /// binoprhs
 /// ::= ('+' primary)
 static ExprAST *ParseBinOpRHS(int ExprPrec, ExprAST *LHS){
+	//if this is a binop, find its precedence
+	while(1) {
+		int TokPrec = GetTokPrecedence()
 
+		//if this is a binop that binds at least as tightly
+		//as the current binop, consume it, otherwise
+		//we're done
+		if(TokPrec < ExprPrec) {
+			return LHS;
+		}
+
+		//we know this is a binop
+		int BinOp = CurTok;
+		getNextToken(); //eat binop
+
+		//parse the primary expression after the binary operator
+		ExprAST *RHS = ParsePrimary();
+		if (!RHS) return 0;
+
+		//if binop binds less tightly with RHS than the operator after
+		//RHS, let the pending operator take RHS as its LHS
+		int NextPrec = GetTokPrecedence();
+		if (TokPrec < NextPrec) {
+			//todo
+		}
+		//todo
+	}
 }
 
 int main() {
