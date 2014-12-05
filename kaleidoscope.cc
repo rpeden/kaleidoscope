@@ -291,6 +291,12 @@ static ExprAST *ParseBinOpRHS(int ExprPrec, ExprAST *LHS){
 	} //back to top of while loop!
 }
 
+/// prototype
+/// ::= id '(' id* ')'
+static PrototypeAST *ParsePrototype() {
+
+}
+
 int main() {
 	//set up standard binary operators
 	//1 is lowest permissted precedence
