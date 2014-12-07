@@ -294,7 +294,30 @@ static ExprAST *ParseBinOpRHS(int ExprPrec, ExprAST *LHS){
 /// prototype
 /// ::= id '(' id* ')'
 static PrototypeAST *ParsePrototype() {
+	if (CurTok != tok_identifier) {
+		return ErrorP("Expected function name in prototype");
+	}
 
+	std::string FnName = IdentifierStr;
+	getNextToken();
+
+	if (CurTok != '(') {
+		return ErrorP("Expected '(' in prototype");
+	}
+
+	//read the list of argument names
+	std::vector<std::string> ArgNames;
+	while (getNextToken == tok_identifier) {
+		ArgNames.push_back(IdentifierStr);
+	}
+	if (CurTok != ')') {
+		return ErrorP("Expected ')' in prototype");
+	}
+
+	// success. 
+	getNextToken(); //eat ')'.
+
+	return new PrototypeAST(FnName, ArgNames);
 }
 
 int main() {
