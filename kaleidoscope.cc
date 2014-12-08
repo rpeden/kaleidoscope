@@ -332,6 +332,12 @@ static FunctionAST *ParseDefinition() {
 	return 0;
 }
 
+///external ::= 'extern' prototype
+static Prototype *ParseExtern() {
+	getNextToken();  //eat extern.
+	return ParsePrototype();
+}
+
 int main() {
 	//set up standard binary operators
 	//1 is lowest permissted precedence
