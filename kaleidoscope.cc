@@ -320,6 +320,18 @@ static PrototypeAST *ParsePrototype() {
 	return new PrototypeAST(FnName, ArgNames);
 }
 
+/// definition ::= 'def' prototype expression
+static FunctionAST *ParseDefinition() {
+	getNextToken(); //eat def
+	PrototypeAST *Proto = ParsePrototype();
+	if (Proto == 0 ) return 0;
+
+	if(ExprAST *E = ParseExpression()) {
+		return new FunctionAST(Proto, E);
+	}
+	return 0;
+}
+
 int main() {
 	//set up standard binary operators
 	//1 is lowest permissted precedence
