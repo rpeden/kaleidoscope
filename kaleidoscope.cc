@@ -348,6 +348,13 @@ static FunctionAST *ParseTopLevelExpr() {
 	return 0;
 }
 
+/// top ::= definition | external | expression | ';'
+static void MainLoop() {
+	while(1) {
+		fprintf(stderr, "ready> ");
+	}
+}
+
 int main() {
 	//set up standard binary operators
 	//1 is lowest permissted precedence
