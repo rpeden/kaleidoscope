@@ -338,6 +338,16 @@ static Prototype *ParseExtern() {
 	return ParsePrototype();
 }
 
+/// toplevelexpr ::= expression
+static FunctionAST *ParseTopLevelExpr() {
+	if (ExprAST *E = ParseExpression()){
+		//make an anonymous prototype.
+		PrototypeAST *Proto = new PrototypeAST("", std::vector<std::string>());
+		return new FunctionAST(Proto, E);
+	}
+	return 0;
+}
+
 int main() {
 	//set up standard binary operators
 	//1 is lowest permissted precedence
